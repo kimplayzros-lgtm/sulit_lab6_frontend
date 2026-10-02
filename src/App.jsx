@@ -17,7 +17,7 @@ import {
   X,
 } from 'lucide-react';
 
-const API_URL = (import.meta.env.VITE_API_URL || 'http://127.0.0.1:8787').replace(/\/$/, '');
+const API_URL = (import.meta.env.VITE_API_URL || (import.meta.env.PROD ? 'https://sulit-lab6-backend.onrender.com' : 'http://127.0.0.1:8787')).replace(/\/$/, '');
 const emptyForm = { product_name: '', description: '', price: '', quantity: '' };
 
 async function request(path, { token, ...options } = {}) {
